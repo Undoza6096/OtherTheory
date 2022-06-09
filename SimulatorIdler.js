@@ -80,6 +80,7 @@ var init = () => {
     let year = day * 365;
 
     theory.createAchievement(0, achievement_category1, "30 minutes", "Reach 1800 seconds.", () => currency_time > halfhour);
+    theory.createAchievement(1, achievement_category1, "first", "Reach 3600 seconds.", () => currency_time > hour);
 
     ///////////////////
     //// Story chapters
@@ -96,8 +97,8 @@ var updateAvailability = () => {
 var tick = (elapsedTime, multiplier) => {
     let dt = BigNumber.from(elapsedTime * multiplier);
     let bonus = theory.publicationMultiplier;
-    currency.value += dt * bonus * getC1(c1.level).pow(getC1Exponent(c1Exp.level)) *
-                                   getC2(c2.level).pow(getC2Exponent(c2Exp.level));
+    currency.value += dt * bonus * getC1(c1.level) *
+                                   getC2(c2.level);
 }
 
 var getPrimaryEquation = () => {
