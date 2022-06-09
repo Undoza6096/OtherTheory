@@ -67,8 +67,6 @@ var init = () => {
     
     /////////////////
     //// Achievements
-    let achievement_category1 = createAchievementCategory(0, "Timer | Achievement");
-
     let minute = 60;
     let halfhour = 1800;
     let hour = 3600;
@@ -79,8 +77,8 @@ var init = () => {
     let double_month = day * 60;
     let year = day * 365;
 
-    theory.createAchievement(0, achievement_category1, "30 minutes", "Reach 1800 seconds.", () => currency_time > halfhour);
-    theory.createAchievement(1, achievement_category1, "first", "Reach 3600 seconds.", () => currency_time > hour);
+    achievement1 = theory.createAchievement(0, "Have?", "yes", () => c1.level > 0);
+    achievement2 = theory.createAchievement(1, "Haves?", "minute", () => currency_time.value = minute);
 
     ///////////////////
     //// Story chapters
@@ -123,7 +121,7 @@ var getPublicationMultiplierFormula = (symbol) => "\\frac{{" + symbol + "}^{0.16
 var getTau = () => currency.value;
 var get2DGraphValue = () => currency.value.sign * (BigNumber.ONE + currency.value.abs()).log10().toNumber();
 
-var getC1 = (level) => Utils.getStepwisePowerSum(level, 2, 10, 0);
+var getC1 = (level) => Utils.getStepwisePowerSum(level, 3, 6, 0);
 var getC2 = (level) => BigNumber.TWO.pow(level);
 var getC1Exponent = (level) => BigNumber.from(1 + 0.05 * level);
 var getC2Exponent = (level) => BigNumber.from(1 + 0.05 * level);
