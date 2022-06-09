@@ -95,6 +95,7 @@ var updateAvailability = () => {
 var tick = (elapsedTime, multiplier) => {
     let dt = BigNumber.from(elapsedTime * multiplier);
     let bonus = theory.publicationMultiplier;
+    currency_timer.value += BigNum.from(0.1);
     currency.value += dt * bonus * getC1(c1.level) *
                                    getC2(c2.level);
 }
