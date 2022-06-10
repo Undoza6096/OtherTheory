@@ -138,8 +138,8 @@ var getTau = () => currency.value;
 var get2DGraphValue = () => currency.value.sign * (BigNumber.ONE + currency.value.abs()).log10().toNumber();
 
 var getC1 = (level) => Utils.getStepwisePowerSum(level, 5, 10, 0);
-var getC2 = (level) => BigNumber.THREE.pow(level) + getAPLHA1(aplha1.level).pow(2);
-var getC3 = (level) => BigNumber.THREE.pow(level) + getAPLHA1(aplha1.level).pow(3);
+var getC2 = (level) => BigNumber.THREE.pow(level);
+var getC3 = (level) => BigNumber.THREE.pow(level);
 var getAPLHA1 = (level) => BigNumber.from(5 * level);
 var getC1Exponent = (level) => BigNumber.from(1 + 0.05 * level);
 var getC2Exponent = (level) => BigNumber.from(1 + 0.05 * level);
