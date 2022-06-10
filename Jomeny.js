@@ -56,7 +56,7 @@ var init = () => {
     {
         let getDesc = (level) => "\\alpha_1=" + level
         let getInfo = (level) => "c_3=" + getAPLHA1(level).toString(0);
-        alpha1 = theory.createUpgrade(2, currency_heart3, new ExponentialCost(1.25, Math.log2(1.12)));
+        alpha1 = theory.createUpgrade(3, currency_heart3, new ExponentialCost(1.25, Math.log2(1.12)));
         alpha1.getDescription = (_) => Utils.getMath(getDesc(alpha1.level));
         alpha1.getInfo = (amount) => Utils.getMathTo(getInfo(alpha1.level), getInfo(alpha1.level + amount));
     }
@@ -69,7 +69,7 @@ var init = () => {
 
     ///////////////////////
     //// Milestone Upgrades
-    theory.setMilestoneCost(new LinearCost(25, 25));
+    theory.setMilestoneCost(new LinearCost(26, 25));
 
     {
         c1Exp = theory.createMilestoneUpgrade(0, 3);
